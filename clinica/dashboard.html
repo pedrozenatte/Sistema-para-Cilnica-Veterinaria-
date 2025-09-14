@@ -71,7 +71,7 @@
     </section>
 
     <!-- Linhas com Listas e Gráficos -->
-    <section class="grid">
+    <section class="grid-main">
       <!-- Últimos atendimentos -->
       <article class="card table-card">
         <header class="card__title">Últimos Atendimentos</header>
@@ -124,41 +124,19 @@
       <article class="card chart-card">
         <header class="card__title">Status</header>
         <div class="donut"
-             style="
-               --d1:50; --d2:17; --d3:20; --d4:13;
-               --c1: var(--green); --c2: var(--amber); --c3: var(--slate); --c4: var(--red);
-             "
-             aria-label="Distribuição por status">
+            style="--d1:50; --d2:17; --d3:20; --d4:13;
+            --c1:#22c55e; --c2:#f59e0b; --c3:#475569; --c4:#ef4444;">
         </div>
         <ul class="legend">
           <li><span class="dot" style="--dot: var(--green)"></span> Resolvido (50%)</li>
           <li><span class="dot" style="--dot: var(--amber)"></span> Em andamento (17%)</li>
           <li><span class="dot" style="--dot: var(--slate)"></span> Pendente (20%)</li>
-          <li><span class="dot" style="--dot: var(--red)"></span> Cancelado (13%)</li>
-        </ul>
-      </article>
-
-      <!-- Canais (donut) -->
-      <article class="card chart-card">
-        <header class="card__title">Canais</header>
-        <div class="donut"
-             style="
-               --d1:16; --d2:17; --d3:17; --d4:17; --d5:16; --d6:17;
-               --c1:#4F46E5; --c2:#10B981; --c3:#F59E0B; --c4:#06B6D4; --c5:#8B5CF6; --c6:#EF4444;
-             ">
-        </div>
-        <ul class="legend">
-          <li><span class="dot" style="--dot:#4F46E5"></span> E-mail (16%)</li>
-          <li><span class="dot" style="--dot:#10B981"></span> WhatsApp (17%)</li>
-          <li><span class="dot" style="--dot:#F59E0B"></span> Chat Online (17%)</li>
-          <li><span class="dot" style="--dot:#06B6D4"></span> Telefone (17%)</li>
-          <li><span class="dot" style="--dot:#8B5CF6"></span> Instagram (16%)</li>
-          <li><span class="dot" style="--dot:#EF4444"></span> LinkedIn (17%)</li>
+          <li><span class="dot" style="--dot: var(--danger)"></span> Cancelado (13%)</li>
         </ul>
       </article>
     </section>
 
-    <section class="grid">
+    <section class="grid-single">
       <!-- Últimos cadastros -->
       <article class="card table-card">
         <header class="card__title">Últimos Cadastros</header>
@@ -201,30 +179,6 @@
           </table>
         </div>
       </article>
-
-      <!-- Tipos (donut) -->
-      <article class="card chart-card">
-        <header class="card__title">Tipos</header>
-        <div class="donut"
-             style="
-               --d1:33; --d2:33; --d3:17; --d4:17;
-               --c1:#D97706; --c2:#F59E0B; --c3:#84CC16; --c4:#22C55E;
-             ">
-        </div>
-        <ul class="legend">
-          <li><span class="dot" style="--dot:#D97706"></span> Reclamação (33%)</li>
-          <li><span class="dot" style="--dot:#F59E0B"></span> Elogio (33%)</li>
-          <li><span class="dot" style="--dot:#84CC16"></span> Sugestão (17%)</li>
-          <li><span class="dot" style="--dot:#22C55E"></span> Suporte Técnico (17%)</li>
-        </ul>
-      </article>
-
-      <!-- Espaço para próximas métricas -->
-      <article class="card placeholder">
-        <header class="card__title">Próxima Métrica</header>
-        <p class="muted">Reserve este bloco para outra visualização (ex.: NPS, metas, etc.).</p>
-      </article>
-    </section>
 
     <footer class="footer">
       <small>© Clínica Vet — painel demonstrativo. </small>
