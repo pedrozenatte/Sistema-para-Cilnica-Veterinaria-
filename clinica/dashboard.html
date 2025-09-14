@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clínica Vet — Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <aside class="sidenav" aria-label="Navegação lateral">
+    <div class="brand">
+      <div class="brand__logo">🐾</div>
+      <div class="brand__name">
+        <strong>CLÍNICA</strong><span>VET</span>
+      </div>
+    </div>
+
+    <nav class="sidenav__nav">
+      <a class="active" href="dashboard.html">Início</a>
+      <a href="cadastro.html">Cadastros</a>
+      <a href ="agendamentos.html">Agendamentos</a>
+      <a href="atendimentos.html">Atendimentos</a>
+      <a href="internacao.html">Internação</a>
+      <a href="saibamais.html">Saiba Mais</a>
+    </nav>
+  </aside>
+
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <h1>Dashboard de Atendimentos</h1>
+        <p class="muted">Resumo em tempo real dos últimos eventos da clínica</p>
+      </div>
+      <div class="filters">
+        <label>
+          Período
+          <select>
+            <option>Hoje</option>
+            <option>Últimos 7 dias</option>
+            <option>Este mês</option>
+            <option>Últimos 90 dias</option>
+          </select>
+        </label>
+      </div>
+    </header>
+
+    <!-- KPIs -->
+    <section class="kpis">
+      <article class="card kpi kpi--primary">
+        <header>Atendimentos</header>
+        <div class="kpi__value">24</div>
+        <footer class="kpi__desc">Realizados no período</footer>
+      </article>
+
+      <article class="card kpi kpi--warning">
+        <header>Média de Tempo</header>
+        <div class="kpi__value">13:29:52</div>
+        <footer class="kpi__desc">Duração média por atendimento</footer>
+      </article>
+
+      <article class="card kpi kpi--success">
+        <header>% de Resolução</header>
+        <div class="kpi__value">50,0%</div>
+        <footer class="kpi__desc">Chamados resolvidos</footer>
+      </article>
+
+      <article class="card kpi kpi--danger">
+        <header>% de Abandono</header>
+        <div class="kpi__value">12,5%</div>
+        <footer class="kpi__desc">Chamados cancelados/sem retorno</footer>
+      </article>
+    </section>
+
+    <!-- Linhas com Listas e Gráficos -->
+    <section class="grid">
+      <!-- Últimos atendimentos -->
+      <article class="card table-card">
+        <header class="card__title">Últimos Atendimentos</header>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Data/Hora</th>
+                <th>Pet</th>
+                <th>Tutor</th>
+                <th>Serviço</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>20/09 09:40</td>
+                <td>Luna (Canina)</td>
+                <td>Mariana S.</td>
+                <td>Vacinação</td>
+                <td><span class="badge badge--success">Resolvido</span></td>
+              </tr>
+              <tr>
+                <td>20/09 11:15</td>
+                <td>Thor (Felina)</td>
+                <td>Paulo H.</td>
+                <td>Consulta</td>
+                <td><span class="badge badge--warning">Em andamento</span></td>
+              </tr>
+              <tr>
+                <td>20/09 13:05</td>
+                <td>Nina (Canina)</td>
+                <td>Carla T.</td>
+                <td>Retorno</td>
+                <td><span class="badge badge--neutral">Pendente</span></td>
+              </tr>
+              <tr>
+                <td>20/09 14:20</td>
+                <td>Zeus (Aves)</td>
+                <td>Guilherme R.</td>
+                <td>Exames</td>
+                <td><span class="badge badge--danger">Cancelado</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- Status (donut) -->
+      <article class="card chart-card">
+        <header class="card__title">Status</header>
+        <div class="donut"
+             style="
+               --d1:50; --d2:17; --d3:20; --d4:13;
+               --c1: var(--green); --c2: var(--amber); --c3: var(--slate); --c4: var(--red);
+             "
+             aria-label="Distribuição por status">
+        </div>
+        <ul class="legend">
+          <li><span class="dot" style="--dot: var(--green)"></span> Resolvido (50%)</li>
+          <li><span class="dot" style="--dot: var(--amber)"></span> Em andamento (17%)</li>
+          <li><span class="dot" style="--dot: var(--slate)"></span> Pendente (20%)</li>
+          <li><span class="dot" style="--dot: var(--red)"></span> Cancelado (13%)</li>
+        </ul>
+      </article>
+
+      <!-- Canais (donut) -->
+      <article class="card chart-card">
+        <header class="card__title">Canais</header>
+        <div class="donut"
+             style="
+               --d1:16; --d2:17; --d3:17; --d4:17; --d5:16; --d6:17;
+               --c1:#4F46E5; --c2:#10B981; --c3:#F59E0B; --c4:#06B6D4; --c5:#8B5CF6; --c6:#EF4444;
+             ">
+        </div>
+        <ul class="legend">
+          <li><span class="dot" style="--dot:#4F46E5"></span> E-mail (16%)</li>
+          <li><span class="dot" style="--dot:#10B981"></span> WhatsApp (17%)</li>
+          <li><span class="dot" style="--dot:#F59E0B"></span> Chat Online (17%)</li>
+          <li><span class="dot" style="--dot:#06B6D4"></span> Telefone (17%)</li>
+          <li><span class="dot" style="--dot:#8B5CF6"></span> Instagram (16%)</li>
+          <li><span class="dot" style="--dot:#EF4444"></span> LinkedIn (17%)</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="grid">
+      <!-- Últimos cadastros -->
+      <article class="card table-card">
+        <header class="card__title">Últimos Cadastros</header>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Pet</th>
+                <th>Tutor</th>
+                <th>Contato</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>19/09</td>
+                <td>Amora (Canina)</td>
+                <td>Letícia M.</td>
+                <td>(19) 9 8888-7777</td>
+              </tr>
+              <tr>
+                <td>18/09</td>
+                <td>Frajola (Felina)</td>
+                <td>Roberto D.</td>
+                <td>(19) 9 9999-0000</td>
+              </tr>
+              <tr>
+                <td>18/09</td>
+                <td>Kiwi (Aves)</td>
+                <td>Juliana P.</td>
+                <td>juliana@email.com</td>
+              </tr>
+              <tr>
+                <td>17/09</td>
+                <td>Spike (Canina)</td>
+                <td>Adriano G.</td>
+                <td>(19) 3333-2222</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- Tipos (donut) -->
+      <article class="card chart-card">
+        <header class="card__title">Tipos</header>
+        <div class="donut"
+             style="
+               --d1:33; --d2:33; --d3:17; --d4:17;
+               --c1:#D97706; --c2:#F59E0B; --c3:#84CC16; --c4:#22C55E;
+             ">
+        </div>
+        <ul class="legend">
+          <li><span class="dot" style="--dot:#D97706"></span> Reclamação (33%)</li>
+          <li><span class="dot" style="--dot:#F59E0B"></span> Elogio (33%)</li>
+          <li><span class="dot" style="--dot:#84CC16"></span> Sugestão (17%)</li>
+          <li><span class="dot" style="--dot:#22C55E"></span> Suporte Técnico (17%)</li>
+        </ul>
+      </article>
+
+      <!-- Espaço para próximas métricas -->
+      <article class="card placeholder">
+        <header class="card__title">Próxima Métrica</header>
+        <p class="muted">Reserve este bloco para outra visualização (ex.: NPS, metas, etc.).</p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <small>© Clínica Vet — painel demonstrativo. </small>
+    </footer>
+  </main>
+</body>
+</html>

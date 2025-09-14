@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Clínica Vet — Agendamentos</title>
+  <link rel="stylesheet" href="agendamentos.css" />
+</head>
+<body>
+  <aside class="sidenav">
+    <div class="brand">
+      <div class="brand__logo">🐾</div>
+      <div class="brand__name"><strong>CLÍNICA</strong><span>VET</span></div>
+    </div>
+    <nav class="sidenav__nav">
+      <a href="dashboard.html">Início</a>
+      <a href="cadastro.html">Cadastros</a>
+      <a class="active" href="agendamentos.html">Agendamentos</a>
+      <a href="atendimentos.html">Atendimentos</a>
+      <a href="internacao.html">Internação</a>
+      <a href="saibamais.html">Saiba Mais</a>
+    </nav>
+  </aside>
+
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <h1>Agendamentos</h1>
+        <p class="muted">Marque consultas e visualize os próximos horários.</p>
+      </div>
+      <div class="actions">
+        <button class="btn btn--ghost">Novo</button>
+        <button class="btn btn--primary">Salvar</button>
+      </div>
+    </header>
+
+    <form class="card form" autocomplete="on">
+      <h2 class="card__title">Novo Agendamento</h2>
+
+      <div class="grid g-4">
+        <label class="field field--2">
+          <span>Tutor</span>
+          <input type="text" name="tutor" placeholder="Ex.: João da Silva" />
+        </label>
+
+        <label class="field">
+          <span>Pet</span>
+          <input type="text" name="pet" placeholder="Ex.: Luna" />
+        </label>
+
+        <label class="field">
+          <span>Espécie</span>
+          <select name="especie">
+            <option>Canina</option>
+            <option>Felina</option>
+            <option>Aves</option>
+            <option>Outros</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Serviço</span>
+          <select name="servico">
+            <option>Consulta</option>
+            <option>Vacinação</option>
+            <option>Retorno</option>
+            <option>Exames</option>
+            <option>Banho/Tosa</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Veterinário</span>
+          <select name="veterinario">
+            <option>Dra. Ana</option>
+            <option>Dr. Bruno</option>
+            <option>Dra. Camila</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Data</span>
+          <input type="date" name="data" />
+        </label>
+
+        <label class="field">
+          <span>Horário</span>
+          <input type="time" name="hora" />
+        </label>
+
+        <label class="field">
+          <span>Duração</span>
+          <select name="duracao">
+            <option>20 min</option>
+            <option>30 min</option>
+            <option>45 min</option>
+            <option>60 min</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Tipo</span>
+          <select name="tipo">
+            <option>Presencial</option>
+            <option>Teleconsulta</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Prioridade</span>
+          <select name="prioridade">
+            <option>Normal</option>
+            <option>Urgente</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Status</span>
+          <select name="status">
+            <option>Agendado</option>
+            <option>Confirmado</option>
+            <option>Cancelado</option>
+            <option>Compareceu</option>
+            <option>Faltou</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Canal</span>
+          <select name="canal">
+            <option>Telefone</option>
+            <option>WhatsApp</option>
+            <option>E-mail</option>
+            <option>Presencial</option>
+          </select>
+        </label>
+
+        <label class="field field--full">
+          <span>Observações</span>
+          <textarea name="obs" rows="3" placeholder="Alergias, recomendações, lembretes..."></textarea>
+        </label>
+
+        <div class="form__actions">
+          <button type="reset" class="btn btn--ghost">Limpar</button>
+          <div class="spacer"></div>
+          <button type="button" class="btn btn--danger">Cancelar</button>
+          <button type="submit" class="btn btn--primary">Agendar</button>
+        </div>
+      </div>
+    </form>
+
+    <section class="grid grid--lists">
+      <!-- Próximos agendamentos -->
+      <article class="card table-card">
+        <header class="card__title">Próximos Agendamentos</header>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Hora</th>
+                <th>Pet</th>
+                <th>Tutor</th>
+                <th>Serviço</th>
+                <th>Vet.</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>21/09</td><td>09:00</td><td>Luna</td><td>Mariana S.</td>
+                <td>Vacinação</td><td>Dra. Ana</td>
+                <td><span class="badge badge--warning">Confirmar</span></td>
+              </tr>
+              <tr>
+                <td>21/09</td><td>10:00</td><td>Thor</td><td>Paulo H.</td>
+                <td>Consulta</td><td>Dr. Bruno</td>
+                <td><span class="badge badge--success">Agendado</span></td>
+              </tr>
+              <tr>
+                <td>21/09</td><td>11:00</td><td>Nina</td><td>Carla T.</td>
+                <td>Retorno</td><td>Dra. Camila</td>
+                <td><span class="badge badge--neutral">Aguardando</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- Lembretes -->
+      <article class="card">
+        <header class="card__title">Lembretes</header>
+        <ul class="reminders">
+          <li>Confirmar os agendamentos de amanhã (WhatsApp).</li>
+          <li>Bloquear 14:00–15:00 (Reunião clínica).</li>
+          <li>Verificar carteirinhas de vacinação dos pets do dia.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <small>© Clínica Vet — Agendamentos</small>
+    </footer>
+  </main>
+</body>
+</html>
