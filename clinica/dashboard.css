@@ -67,7 +67,6 @@ select{
 @media (max-width: 1200px){
   .grid{ grid-template-columns:1fr; }
   body{ grid-template-columns: 80px 1fr; }
-  .sidenav__nav a{ font-size:12px; padding:8px 10px; }
   .brand__name{ display:none; }
 }
 .kpis{ display:grid; gap:18px; grid-template-columns: repeat(4, 1fr); }
@@ -155,4 +154,30 @@ tbody tr:hover{ background:#0c1630; }
 /* Responsivo: empilha tudo */
 @media (max-width: 1100px) {
   .grid-main { grid-template-columns: 1fr; }
+}
+
+/* Layout lateral */
+.sidenav__nav{
+  display:grid; gap:6px;
+}
+.sidenav__nav a{
+  display:flex; align-items:center; gap:10px;
+  padding:10px 12px; border-radius:10px;
+  text-decoration:none;                   /* remove sublinhado */
+}
+.sidenav__nav a:link,
+.sidenav__nav a:visited{ color:var(--text); }  /* evita roxo padrão */
+.sidenav__nav a:hover{ background:#111827; }
+.sidenav__nav a.active{ background:#1f2937; border:1px solid #374151; }
+
+.sidenav__nav .ico{ width:24px; display:grid; place-items:center; }
+.sidenav__nav .label{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* colapsar para ícones em telas menores */
+@media (max-width:1100px){
+  body{ grid-template-columns:72px 1fr; }
+  .sidenav{ width:72px; padding-left:8px; padding-right:8px; }
+  .brand__name{ display:none; }
+  .sidenav__nav a{ justify-content:center; gap:0; }
+  .sidenav__nav .label{ display:none; }
 }
