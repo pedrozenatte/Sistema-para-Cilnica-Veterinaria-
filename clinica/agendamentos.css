@@ -132,6 +132,35 @@ tbody tr:hover{ background:#0c1630; }
 /* --------- Rodapé --------- */
 .footer{ color:var(--muted); text-align:center; padding:6px 0 12px; font-size:12px; }
 
+/* ===== Agenda ===== */
+.agenda__header{
+  display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;
+}
+.agenda__filters{ display:grid; gap:10px; grid-template-columns: repeat(4, minmax(180px, 1fr)); }
+@media (max-width:900px){ .agenda__filters{ grid-template-columns: 1fr 1fr; } }
+@media (max-width:520px){ .agenda__filters{ grid-template-columns: 1fr; } }
+
+.field{ display:grid; gap:6px; }
+.field span{ font-size:12px; color:var(--muted); }
+.field--search input{ width:100%; }
+
+.agenda-table{ width:100%; border-collapse:collapse; min-width:860px; }
+.agenda-table th{
+  text-align:left; font-size:12px; color:var(--muted);
+  padding:10px; border-bottom:1px solid var(--border); background:#111a33; position:sticky; top:0; z-index:1;
+}
+.agenda-table td{ padding:12px 10px; border-bottom:1px solid #17223e; }
+.agenda-table tr:hover{ background:#0c1630; }
+
+.badge{
+  font-size:12px; padding:4px 8px; border-radius:999px; border:1px solid transparent; display:inline-block; line-height:1;
+}
+.badge--warning{ background:rgba(245,158,11,.12); color:#fde68a; border-color:#713f12; }
+.badge--info   { background:rgba(59,130,246,.12); color:#bfdbfe; border-color:#1e40af; }
+.badge--success{ background:rgba(34,197,94,.12); color:#86efac; border-color:#14532d; }
+.badge--danger { background:rgba(239,68,68,.12);  color:#fca5a5; border-color:#7f1d1d; }
+
+
 /* Layout lateral */
 .sidenav__nav{
   display:grid; gap:6px;

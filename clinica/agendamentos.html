@@ -208,6 +208,102 @@
       </article>
     </section>
 
+    <!-- AGENDA — lista de todos os agendamentos -->
+<section class="card">
+  <header class="agenda__header">
+    <h2 class="card__title">Agenda de Agendamentos</h2>
+    <div class="agenda__filters">
+      <label class="field">
+        <span>De</span>
+        <input type="date" />
+      </label>
+      <label class="field">
+        <span>Até</span>
+        <input type="date" />
+      </label>
+      <label class="field">
+        <span>Status</span>
+        <select>
+          <option value="">Todos</option>
+          <option>Programado</option>
+          <option>Confirmado</option>
+          <option>Realizado</option>
+          <option>Cancelado</option>
+        </select>
+      </label>
+      <label class="field field--search">
+        <span>Buscar</span>
+        <input type="search" placeholder="Pet, tutor, serviço, vet..." />
+      </label>
+    </div>
+  </header>
+
+  <div class="table-wrapper">
+    <table class="agenda-table" aria-label="Agenda de agendamentos">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Hora</th>
+          <th>Pet</th>
+          <th>Tutor</th>
+          <th>Serviço</th>
+          <th>Veterinário</th>
+          <th>Status</th>
+          <th>Contato</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- EXEMPLOS — substitua pelos seus dados -->
+        <tr>
+          <td>20/09/2025</td>
+          <td>09:00</td>
+          <td>Luna (Canina)</td>
+          <td>Mariana S.</td>
+          <td>Vacinação</td>
+          <td>Dra. Ana</td>
+          <td><span class="badge badge--info">Confirmado</span></td>
+          <td>(19) 9 8888-7777</td>
+        </tr>
+        <tr>
+          <td>20/09/2025</td>
+          <td>11:30</td>
+          <td>Thor (Felina)</td>
+          <td>Paulo H.</td>
+          <td>Consulta</td>
+          <td>Dr. Bruno</td>
+          <td><span class="badge badge--warning">Programado</span></td>
+          <td>(19) 9 9999-0000</td>
+        </tr>
+        <tr>
+          <td>20/09/2025</td>
+          <td>14:00</td>
+          <td>Nina (Canina)</td>
+          <td>Carla T.</td>
+          <td>Retorno</td>
+          <td>Dra. Camila</td>
+          <td><span class="badge badge--success">Realizado</span></td>
+          <td>carla@email.com</td>
+        </tr>
+        <tr>
+          <td>21/09/2025</td>
+          <td>10:15</td>
+          <td>Zeus (Aves)</td>
+          <td>Guilherme R.</td>
+          <td>Exames</td>
+          <td>Dra. Ana</td>
+          <td><span class="badge badge--danger">Cancelado</span></td>
+          <td>(19) 3333-2222</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="agenda__foot">
+    <small class="muted">Dica: use os filtros acima para localizar rapidamente um agendamento.</small>
+  </div>
+</section>
+
+
     <footer class="footer">
       <small>© Clínica Vet — Agendamentos</small>
     </footer>
