@@ -175,7 +175,7 @@ html, body { width: 100%; overflow-x: hidden; }
   background: #111a33;
 }
 .hour-grid th.sticky-col {
-  position: sticky; left: 0; z-index: 4;
+  position: sticky; left: 0; z-index: 6;
   background: #0e1a33; text-align: left;
   min-width: clamp(160px, 28vw, 240px); /* 1ª coluna responsiva */
 }
