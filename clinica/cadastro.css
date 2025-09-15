@@ -142,6 +142,40 @@ textarea{ resize:vertical; }
   .field--wide, .field--3, .field--2{ grid-column: span 1; }
 }
 
+/* ===== Lista de Cadastros ===== */
+.list__header{
+  display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;
+}
+.list__filters{ display:grid; gap:10px; grid-template-columns: 160px 160px minmax(240px, 1fr); }
+@media (max-width:900px){ .list__filters{ grid-template-columns: 1fr 1fr; } }
+@media (max-width:520px){ .list__filters{ grid-template-columns: 1fr; } }
+
+.field{ display:grid; gap:6px; }
+.field span{ font-size:12px; color:var(--muted); }
+.field--search input{ width:100%; }
+
+.cadastro-table{ width:100%; border-collapse:collapse; min-width: 980px; }
+.cadastro-table th{
+  text-align:left; font-size:12px; color:var(--muted);
+  padding:10px; border-bottom:1px solid var(--border); background:#111a33; position:sticky; top:0; z-index:1;
+}
+.cadastro-table td{ padding:12px 10px; border-bottom:1px solid #17223e; }
+.cadastro-table tr:hover{ background:#0c1630; }
+
+/* badges e botões */
+.badge{
+  font-size:12px; padding:3px 8px; border-radius:999px; border:1px solid transparent; display:inline-block; line-height:1;
+}
+.badge--success{ background:rgba(34,197,94,.12); color:#86efac; border-color:#14532d; }
+.badge--neutral{ background:rgba(148,163,184,.12); color:#cbd5e1; border-color:#475569; }
+
+.btn-small{
+  font-size:12px; padding:6px 10px; border-radius:8px; text-decoration:none;
+  border:1px solid #2b385f; background:#0b1220; color:var(--text); display:inline-block; margin-right:6px;
+}
+.btn-small--ghost{ background:transparent; }
+
+
 /* Layout lateral */
 .sidenav__nav{
   display:grid; gap:6px;

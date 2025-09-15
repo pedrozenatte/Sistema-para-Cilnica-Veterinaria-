@@ -261,6 +261,107 @@
         <button type="submit" class="btn btn--primary">Salvar Cadastro</button>
       </div>
     </form>
+    
+    <!-- LISTA DE PESSOAS CADASTRADAS -->
+    <section class="card" id="lista-cadastros">
+      <header class="list__header">
+        <h2 class="card__title">Pessoas Cadastradas</h2>
+        <div class="list__filters">
+          <label class="field">
+            <span>Tipo</span>
+            <select id="fTipo">
+              <option value="">Todos</option>
+              <option value="Física">Física</option>
+              <option value="Jurídica">Jurídica</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Situação</span>
+            <select id="fSituacao">
+              <option value="">Todas</option>
+              <option value="Ativo">Ativo</option>
+              <option value="Inativo">Inativo</option>
+            </select>
+          </label>
+          <label class="field field--search">
+            <span>Buscar</span>
+            <input id="fBusca" type="search" placeholder="Nome, CPF/CNPJ, e-mail, cidade..." />
+          </label>
+        </div>
+      </header>
+
+      <div class="table-wrapper">
+        <table class="cadastro-table" aria-label="Lista de pessoas cadastradas">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Nome</th>
+              <th>Tipo</th>
+              <th>CPF/CNPJ</th>
+              <th>Pet</th>
+              <th>Contato</th>
+              <th>E-mail</th>
+              <th>Cidade/UF</th>
+              <th>Situação</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="cadastrosBody">
+            <!-- EXEMPLOS -->
+            <tr>
+              <td>00136</td>
+              <td>João da Silva</td>
+              <td>Física</td>
+              <td>635.843.340-71</td>
+              <td>Luna (Canina)</td>
+              <td>(19) 1234-5678</td>
+              <td>joao@email.com</td>
+              <td>Mogi Mirim/SP</td>
+              <td><span class="badge badge--success">Ativo</span></td>
+              <td>
+                <a href="#" class="btn-small">Ver</a>
+                <a href="#" class="btn-small btn-small--ghost">Editar</a>
+              </td>
+            </tr>
+            <tr>
+              <td>00158</td>
+              <td>Clínica Amiga Ltda.</td>
+              <td>Jurídica</td>
+              <td>12.345.678/0001-90</td>
+              <td>—</td>
+              <td>(19) 3333-2222</td>
+              <td>contato@amiga.com.br</td>
+              <td>Campinas/SP</td>
+              <td><span class="badge badge--neutral">Inativo</span></td>
+              <td>
+                <a href="#" class="btn-small">Ver</a>
+                <a href="#" class="btn-small btn-small--ghost">Editar</a>
+              </td>
+            </tr>
+            <tr>
+              <td>00174</td>
+              <td>Mariana Souza</td>
+              <td>Física</td>
+              <td>401.235.654-00</td>
+              <td>Thor (Felina)</td>
+              <td>(19) 98888-7777</td>
+              <td>mariana@email.com</td>
+              <td>Jaguariúna/SP</td>
+              <td><span class="badge badge--success">Ativo</span></td>
+              <td>
+                <a href="#" class="btn-small">Ver</a>
+                <a href="#" class="btn-small btn-small--ghost">Editar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="list__foot">
+        <small class="muted">Use os filtros para localizar um cadastro rapidamente.</small>
+      </div>
+    </section>
+
 
     <footer class="footer">
       <small>© Clínica Vet — Cadastros</small>
