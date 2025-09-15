@@ -76,11 +76,16 @@ tbody tr:hover{ background:#0c1630; }
 /* Footer & responsive */
 .footer{ color:var(--muted); text-align:center; padding:6px 0 12px; font-size:12px; }
 
+/* --- COLAPSA A LATERAL A PARTIR DE 1200px --- */
 @media (max-width:1200px){
-  body{ grid-template-columns: 80px 1fr; }
-  .brand__name{ display:none; }
-  .g-4, .g-3, .g-2{ grid-template-columns: 1fr 1fr; }
+  body{ grid-template-columns:72px 1fr; }        /* coluna de ícones */
+  .sidenav{ width:72px; padding:12px 8px; }      /* padding menor e coerente */
+  .brand__name{ display:none; }                  /* esconde nome da marca */
+  .sidenav__nav a{ justify-content:center; gap:0; }
+  .sidenav__nav .label{ display:none; }          /* esconde títulos dos itens */
+  .sidenav{ overflow-x: hidden; }                /* garante que nada vaze */
 }
+
 @media (max-width:740px){
   .g-4, .g-3, .g-2{ grid-template-columns: 1fr; }
   .field--2{ grid-column: span 1; }
@@ -102,13 +107,4 @@ tbody tr:hover{ background:#0c1630; }
 
 .sidenav__nav .ico{ width:24px; display:grid; place-items:center; }
 .sidenav__nav .label{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-
-/* colapsar para ícones em telas menores */
-@media (max-width:1100px){
-  body{ grid-template-columns:72px 1fr; }
-  .sidenav{ width:72px; padding-left:8px; padding-right:8px; }
-  .brand__name{ display:none; }
-  .sidenav__nav a{ justify-content:center; gap:0; }
-  .sidenav__nav .label{ display:none; }
-}
 

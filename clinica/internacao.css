@@ -92,10 +92,16 @@ body{
 /* Rodapé e responsivo */
 .footer{ color:var(--muted); text-align:center; padding:6px 0 12px; font-size:12px; }
 
+/* --- COLAPSA A LATERAL A PARTIR DE 1200px --- */
 @media (max-width:1200px){
-  body{ grid-template-columns: 80px 1fr; }
-  .brand__name{ display:none; }
+  body{ grid-template-columns:72px 1fr; }        /* coluna de ícones */
+  .sidenav{ width:72px; padding:12px 8px; }      /* padding menor e coerente */
+  .brand__name{ display:none; }                  /* esconde nome da marca */
+  .sidenav__nav a{ justify-content:center; gap:0; }
+  .sidenav__nav .label{ display:none; }          /* esconde títulos dos itens */
+  .sidenav{ overflow-x: hidden; }                /* garante que nada vaze */
 }
+
 
 /* Layout lateral */
 .sidenav__nav{
@@ -114,12 +120,81 @@ body{
 .sidenav__nav .ico{ width:24px; display:grid; place-items:center; }
 .sidenav__nav .label{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
-/* colapsar para ícones em telas menores */
-@media (max-width:1100px){
-  body{ grid-template-columns:72px 1fr; }
-  .sidenav{ width:72px; padding-left:8px; padding-right:8px; }
-  .brand__name{ display:none; }
-  .sidenav__nav a{ justify-content:center; gap:0; }
-  .sidenav__nav .label{ display:none; }
+
+/* Alterações GPTísticas */
+
+/* -------- Evita scroll horizontal na página inteira -------- */
+html, body { width: 100%; overflow-x: hidden; }
+
+/* -------- Topbar e filtros mais responsivos -------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;     /* centraliza verticalmente */
+  gap: 12px;
+  flex-wrap: wrap;         /* permite quebrar linha quando faltar espaço */
+}
+.topbar > div:first-child { min-width: 0; }
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;         /* inputs/selects podem quebrar linha */
+}
+.filter { white-space: nowrap; }
+.filter input, .filter select {
+  width: auto;
+  max-width: 100%;
+}
+@media (max-width: 640px) {
+  .topbar { flex-direction: column; align-items: stretch; }
+  .actions { width: 100%; }
+  .filter { flex: 1; }
+  .filter input, .filter select { width: 100%; }
 }
 
+/* -------- Cartão da tabela e área rolável -------- */
+.table-card { padding: 12px; overflow: hidden; } /* evita criar scrollbar da página */
+.table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;        /* rolagem horizontal só aqui */
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* suaviza no iOS */
+}
+
+/* -------- Tabela: não força a largura da página -------- */
+.hour-grid {
+  width: max-content;  /* mede pelo conteúdo (24h + 1ª coluna) */
+  min-width: 100%;     /* mas nunca menor que o cartão */
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+/* -------- Cabeçalho/1ª coluna fixos e com z-index seguro -------- */
+.hour-grid thead th {
+  position: sticky; top: 0; z-index: 5;
+  background: #111a33;
+}
+.hour-grid th.sticky-col {
+  position: sticky; left: 0; z-index: 4;
+  background: #0e1a33; text-align: left;
+  min-width: clamp(160px, 28vw, 240px); /* 1ª coluna responsiva */
+}
+
+/* -------- Células: largura mínima responsiva -------- */
+.hour-grid th, .hour-grid td {
+  min-width: clamp(44px, 5.2vw, 56px);
+  padding: clamp(6px, 1.2vw, 10px);
+  text-align: center;
+  border-right: 1px solid #17223e;
+  border-bottom: 1px solid #17223e;
+}
+
+/* -------- Dica: melhora o foco visual ao passar mouse -------- */
+.hour-grid tbody tr:hover td { background: #0c1630; }
+
+/* (Opcional) estiliza a barra de rolagem do wrapper */
+.table-wrapper::-webkit-scrollbar { height: 10px; }
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #1f2937; border-radius: 999px; border: 2px solid #0b1220;
+}
+.table-wrapper::-webkit-scrollbar-track { background: transparent; }
