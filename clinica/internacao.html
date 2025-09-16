@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clínica Vet — Internação</title>
-  <link rel="stylesheet" href="internacao.css" />
-</head>
-<body>
-  <aside class="sidenav">
-    <div class="brand">
-      <div class="brand__logo">🐾</div>
-      <div class="brand__name"><strong>CLÍNICA</strong><span>VET</span></div>
-    </div>
-    <nav class="sidenav__nav">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clínica Vet — Internação</title>
+    <link rel="stylesheet" href="internacao.css" />
+  </head>
+  <body>
+    <aside class="sidenav">
+      <div class="brand">
+        <div class="brand-logo">🐾</div>
+        <div class="brand-name"><strong>CLÍNICA</strong><span>VET</span></div>
+      </div>
+      <nav class="sidenav-nav">
         <a href="dashboard.html" class="nav-item" title="Início">
           <span class="ico">🏠</span><span class="label">Início</span>
         </a>
@@ -25,112 +25,224 @@
         <a href="atendimentos.html" class="nav-item" title="Atendimentos">
           <span class="ico">💉</span><span class="label">Atendimentos</span>
         </a>
-        <a class="active" href="internacao.html" class="nav-item" title="Internação">
+        <!-- Aba ativa na sidebar -->
+        <a href="internacao.html" class="nav-item active" title="Internação">
           <span class="ico">🏥</span><span class="label">Internação</span>
         </a>
         <a href="prontuario.html" class="nav-item" title="Prontuários">
           <span class="ico">📋</span><span class="label">Prontuários</span>
         </a>
-    </nav>
-  </aside>
+      </nav>
+    </aside>
 
-  <main class="page">
-    <header class="topbar">
-      <div>
-        <h1>Internação — Tabela de Horas</h1>
-        <p class="muted">Cada coluna representa uma hora do dia. Cada linha representa um paciente.</p>
-      </div>
-      <div class="actions">
-        <label class="filter">
-          Data
-          <input type="date" />
-        </label>
-        <label class="filter">
-          Turno
-          <select>
-            <option>00–23h</option>
-            <option>06–17h</option>
-            <option>18–05h</option>
-          </select>
-        </label>
-      </div>
-    </header>
+    <main class="page">
+      <header class="topbar">
+        <div>
+          <h1>Internação — Tabela de Horas</h1>
+          <p class="muted">
+            Cada coluna representa uma hora do dia. Cada linha representa um
+            paciente.
+          </p>
+        </div>
+        <div class="actions">
+          <label class="filter">
+            Data
+            <input type="date" />
+          </label>
+          <label class="filter">
+            Turno
+            <select>
+              <option>00–23h</option>
+              <option>06–17h</option>
+              <option>18–05h</option>
+            </select>
+          </label>
+        </div>
+      </header>
 
-    <!-- Legenda -->
-    <section class="card legend">
-      <strong>Legenda:</strong>
-      <span class="pill rx-a">Amoxicilina</span>
-      <span class="pill rx-b">Dipirona</span>
-      <span class="pill rx-c">Soro</span>
-      <span class="pill rx-d">Antiemético</span>
-      <span class="pill rx-e">Antibiótico (IV)</span>
-    </section>
+      <!-- Legenda -->
+      <section class="card legend">
+        <strong>Legenda:</strong>
+        <span class="pill rx-a">Amoxicilina</span>
+        <span class="pill rx-b">Dipirona</span>
+        <span class="pill rx-c">Soro</span>
+        <span class="pill rx-d">Antiemético</span>
+        <span class="pill rx-e">Antibiótico (IV)</span>
+      </section>
 
-    <!-- Grade de horas -->
-    <section class="card table-card">
-      <div class="table-wrapper">
-        <table class="hour-grid" aria-label="Grade de internação por hora">
-          <thead>
-            <tr>
-              <th class="sticky-col">Paciente / Leito</th>
-              <!-- 00..23 -->
-              <th>00</th><th>01</th><th>02</th><th>03</th><th>04</th><th>05</th>
-              <th>06</th><th>07</th><th>08</th><th>09</th><th>10</th><th>11</th>
-              <th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th>
-              <th>18</th><th>19</th><th>20</th><th>21</th><th>22</th><th>23</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Cada <td> pode receber classes de medicamento (rx-a,...), e
+      <!-- Grade de horas -->
+      <section class="card table-card">
+        <div class="table-wrapper">
+          <table class="hour-grid" aria-label="Grade de internação por hora">
+            <thead>
+              <tr>
+                <th class="sticky-col">Paciente / Leito</th>
+                <!-- 00..23 -->
+                <th>00</th>
+                <th>01</th>
+                <th>02</th>
+                <th>03</th>
+                <th>04</th>
+                <th>05</th>
+                <th>06</th>
+                <th>07</th>
+                <th>08</th>
+                <th>09</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+                <th>13</th>
+                <th>14</th>
+                <th>15</th>
+                <th>16</th>
+                <th>17</th>
+                <th>18</th>
+                <th>19</th>
+                <th>20</th>
+                <th>21</th>
+                <th>22</th>
+                <th>23</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Cada <td> pode receber classes de medicamento (rx-a,...), e
                  opcionalmente data-attrs para futura integração JS (ex.: data-med, data-dose, data-via, data-dias). -->
-            <tr>
-              <th class="sticky-col">
-                Luna — Leito 1<br><small class="muted">Canina • 8,1 kg</small>
-              </th>
-              <td></td><td></td><td></td><td></td><td></td><td class="rx-b" title="Dipirona 25 mg/kg VO"></td>
-              <td></td><td class="rx-a" title="Amoxicilina 12,5 mg/kg VO"></td><td></td><td></td><td class="rx-c" title="Soro 20 ml IV"></td><td></td>
-              <td class="rx-b" title="Dipirona"></td><td></td><td></td><td class="rx-a" title="Amoxicilina"></td><td></td>
-              <td></td><td class="rx-c" title="Soro"></td><td></td><td class="rx-b" title="Dipirona"></td><td></td><td></td><td></td>
-            </tr>
+              <tr>
+                <th class="sticky-col">
+                  Luna — Leito 1<br /><small class="muted"
+                    >Canina • 8,1 kg</small
+                  >
+                </th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-b" title="Dipirona 25 mg/kg VO"></td>
+                <td></td>
+                <td class="rx-a" title="Amoxicilina 12,5 mg/kg VO"></td>
+                <td></td>
+                <td></td>
+                <td class="rx-c" title="Soro 20 ml IV"></td>
+                <td></td>
+                <td class="rx-b" title="Dipirona"></td>
+                <td></td>
+                <td></td>
+                <td class="rx-a" title="Amoxicilina"></td>
+                <td></td>
+                <td></td>
+                <td class="rx-c" title="Soro"></td>
+                <td></td>
+                <td class="rx-b" title="Dipirona"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
 
-            <tr>
-              <th class="sticky-col">
-                Thor — Leito 2<br><small class="muted">Felina • 4,2 kg</small>
-              </th>
-              <td></td><td></td><td class="rx-e" title="Antibiótico IV"></td><td></td><td></td><td></td>
-              <td class="rx-d" title="Antiemético"></td><td></td><td></td><td class="rx-e" title="Antibiótico IV"></td><td></td><td></td>
-              <td></td><td class="rx-d" title="Antiemético"></td><td></td><td></td><td class="rx-e" title="Antibiótico IV"></td><td></td>
-              <td></td><td></td><td class="rx-d" title="Antiemético"></td><td></td><td></td><td></td>
-            </tr>
+              <tr>
+                <th class="sticky-col">
+                  Thor — Leito 2<br /><small class="muted"
+                    >Felina • 4,2 kg</small
+                  >
+                </th>
+                <td></td>
+                <td></td>
+                <td class="rx-e" title="Antibiótico IV"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-d" title="Antiemético"></td>
+                <td></td>
+                <td></td>
+                <td class="rx-e" title="Antibiótico IV"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-d" title="Antiemético"></td>
+                <td></td>
+                <td></td>
+                <td class="rx-e" title="Antibiótico IV"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-d" title="Antiemético"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
 
-            <tr>
-              <th class="sticky-col">
-                Nina — Leito 3<br><small class="muted">Canina • 12,0 kg</small>
-              </th>
-              <td></td><td class="rx-c" title="Soro 30 ml IV"></td><td></td><td></td><td></td><td></td>
-              <td class="rx-a" title="Amoxicilina"></td><td></td><td class="rx-c" title="Soro"></td><td></td><td></td><td></td>
-              <td class="rx-a" title="Amoxicilina"></td><td></td><td class="rx-c" title="Soro"></td><td></td><td></td><td></td>
-              <td class="rx-a" title="Amoxicilina"></td><td></td><td class="rx-c" title="Soro"></td><td></td><td></td><td></td>
-            </tr>
+              <tr>
+                <th class="sticky-col">
+                  Nina — Leito 3<br /><small class="muted"
+                    >Canina • 12,0 kg</small
+                  >
+                </th>
+                <td></td>
+                <td class="rx-c" title="Soro 30 ml IV"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-a" title="Amoxicilina"></td>
+                <td></td>
+                <td class="rx-c" title="Soro"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-a" title="Amoxicilina"></td>
+                <td></td>
+                <td class="rx-c" title="Soro"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-a" title="Amoxicilina"></td>
+                <td></td>
+                <td class="rx-c" title="Soro"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
 
-            <tr>
-              <th class="sticky-col">
-                Zeus — Leito 4<br><small class="muted">Aves • 0,6 kg</small>
-              </th>
-              <td class="rx-d" title="Antiemético"></td><td></td><td></td><td></td><td></td><td></td>
-              <td></td><td class="rx-b" title="Dipirona"></td><td></td><td></td><td></td><td class="rx-d" title="Antiemético"></td>
-              <td></td><td></td><td class="rx-b" title="Dipirona"></td><td></td><td></td><td class="rx-d" title="Antiemético"></td>
-              <td></td><td></td><td class="rx-b" title="Dipirona"></td><td></td><td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="muted small">Dica: passe o mouse na célula para ver o medicamento/dose. A primeira coluna é fixa para facilitar a rolagem horizontal.</p>
-    </section>
+              <tr>
+                <th class="sticky-col">
+                  Zeus — Leito 4<br /><small class="muted">Aves • 0,6 kg</small>
+                </th>
+                <td class="rx-d" title="Antiemético"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-b" title="Dipirona"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="rx-d" title="Antiemético"></td>
+                <td></td>
+                <td></td>
+                <td class="rx-b" title="Dipirona"></td>
+                <td></td>
+                <td></td>
+                <td class="rx-d" title="Antiemético"></td>
+                <td></td>
+                <td></td>
+                <td class="rx-b" title="Dipirona"></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="muted small">
+          Dica: passe o mouse na célula para ver o medicamento/dose. A primeira
+          coluna é fixa para facilitar a rolagem horizontal.
+        </p>
+      </section>
 
-    <footer class="footer">
-      <small>© Clínica Vet — Internação</small>
-    </footer>
-  </main>
-</body>
+      <footer class="footer">
+        <small>© Clínica Vet — Internação</small>
+      </footer>
+    </main>
+  </body>
 </html>

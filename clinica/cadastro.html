@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clínica Vet — Cadastros</title>
-  <link rel="stylesheet" href="cadastro.css" />
-</head>
-<body>
-  <aside class="sidenav">
-    <div class="brand">
-      <div class="brand__logo">🐾</div>
-      <div class="brand__name"><strong>CLÍNICA</strong><span>VET</span></div>
-    </div>
-    <nav class="sidenav__nav">
-      <a href="dashboard.html" class="nav-item" title="Início">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clínica Vet — Cadastros</title>
+    <link rel="stylesheet" href="cadastro.css" />
+  </head>
+  <body>
+    <aside class="sidenav">
+      <div class="brand">
+        <div class="brand-logo">🐾</div>
+        <div class="brand-name"><strong>CLÍNICA</strong><span>VET</span></div>
+      </div>
+      <nav class="sidenav-nav">
+        <a href="dashboard.html" class="nav-item" title="Início">
           <span class="ico">🏠</span><span class="label">Início</span>
         </a>
-        <a class="active" href="cadastro.html" class="nav-item" title="Cadastros">
+        <!-- Aba ativa na sidebar -->
+        <a href="cadastro.html" class="nav-item active" title="Cadastros">
           <span class="ico">📝</span><span class="label">Cadastros</span>
         </a>
         <a href="agendamentos.html" class="nav-item" title="Agendamentos">
@@ -31,344 +32,369 @@
         <a href="prontuario.html" class="nav-item" title="Prontuários">
           <span class="ico">📋</span><span class="label">Prontuários</span>
         </a>
-    </nav>
-  </aside>
+      </nav>
+    </aside>
 
-  <main class="page">
-    <header class="topbar">
-      <div>
-        <h1>Cadastro de Clientes e Pets</h1>
-        <p class="muted">Preencha os dados para criar/atualizar o registro.</p>
-      </div>
-      <div class="actions">
-        <button class="btn btn--ghost">Procurar</button>
-        <button class="btn btn--ghost">Novo</button>
-        <button class="btn btn--primary">Salvar</button>
-      </div>
-    </header>
-
-    <form class="form" autocomplete="on">
-      <!-- DADOS DO TUTOR -->
-      <fieldset class="card">
-        <legend>Dados do Tutor</legend>
-        <div class="grid g-3">
-          <label class="field">
-            <span>Código</span>
-            <input type="text" inputmode="numeric" placeholder="00000" />
-          </label>
-
-          <label class="field">
-            <span>Pessoa</span>
-            <select>
-              <option>Física</option>
-              <option>Jurídica</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span>Situação</span>
-            <select>
-              <option>Liberado</option>
-              <option>Inativo</option>
-              <option>Bloqueado</option>
-            </select>
-          </label>
-
-          <label class="field field--wide">
-            <span>Nome completo</span>
-            <input type="text" placeholder="Ex.: João da Silva" />
-          </label>
-
-          <label class="field">
-            <span>Sexo</span>
-            <select>
-              <option>F</option>
-              <option>M</option>
-              <option>Outro</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span>Data de nascimento</span>
-            <input type="date" />
-          </label>
+    <main class="page">
+      <header class="topbar">
+        <div>
+          <h1>Cadastro de Clientes e Pets</h1>
+          <p class="muted">
+            Preencha os dados para criar/atualizar o registro.
+          </p>
         </div>
-      </fieldset>
-
-      <!-- DOCUMENTOS -->
-      <fieldset class="card">
-        <legend>Documentos</legend>
-        <div class="grid g-3">
-          <label class="field">
-            <span>CPF / CNPJ</span>
-            <input type="text" placeholder="000.000.000-00" />
-          </label>
-
-          <label class="field">
-            <span>RG / IE</span>
-            <input type="text" placeholder="Documento" />
-          </label>
-
-          <label class="field">
-            <span>UF do documento</span>
-            <select>
-              <option>SP</option><option>RJ</option><option>MG</option><option>PR</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span>Estado</span>
-            <input type="text" inputmode="numeric" placeholder="35" />
-          </label>
-
-          <label class="check">
-            <input type="checkbox" />
-            <span>Consulta CNPJ</span>
-          </label>
-
-          <label class="check">
-            <input type="checkbox" />
-            <span>Inativo</span>
-          </label>
-        </div>
-      </fieldset>
-
-      <!-- ENDEREÇO -->
-      <fieldset class="card">
-        <legend>Endereço</legend>
-        <div class="grid g-4">
-          <label class="field field--3">
-            <span>Logradouro</span>
-            <input type="text" placeholder="Rua/Av." />
-          </label>
-          <label class="field">
-            <span>Nº</span>
-            <input type="text" inputmode="numeric" placeholder="123" />
-          </label>
-          <label class="field field--2">
-            <span>Compl.</span>
-            <input type="text" placeholder="Ap., Bloco, Casa..." />
-          </label>
-
-          <label class="field">
-            <span>Bairro</span>
-            <input type="text" />
-          </label>
-
-          <label class="field">
-            <span>CEP</span>
-            <input type="text" placeholder="00000-000" />
-          </label>
-
-          <label class="field">
-            <span>Cidade</span>
-            <input type="text" />
-          </label>
-
-          <label class="field">
-            <span>UF</span>
-            <select>
-              <option>SP</option><option>RJ</option><option>MG</option><option>ES</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span>País</span>
-            <input type="text" value="Brasil" />
-          </label>
-        </div>
-      </fieldset>
-
-      <!-- CONTATO -->
-      <fieldset class="card">
-        <legend>Contato</legend>
-        <div class="grid g-3">
-          <label class="field">
-            <span>Telefone</span>
-            <input type="tel" placeholder="(00) 0000-0000" />
-          </label>
-          <label class="field">
-            <span>Celular</span>
-            <input type="tel" placeholder="(00) 00000-0000" />
-          </label>
-          <label class="field field--wide">
-            <span>E-mail</span>
-            <input type="email" placeholder="email@exemplo.com" />
-          </label>
-          <label class="check">
-            <input type="checkbox" />
-            <span>Receber boleto por e-mail</span>
-          </label>
-        </div>
-      </fieldset>
-
-      <!-- DADOS DO PET -->
-      <fieldset class="card">
-        <legend>Dados do Pet</legend>
-        <div class="grid g-4">
-          <label class="field">
-            <span>Nome do Pet</span>
-            <input type="text" placeholder="Ex.: Luna" />
-          </label>
-          <label class="field">
-            <span>Espécie</span>
-            <select>
-              <option>Canina</option><option>Felina</option><option>Aves</option><option>Outros</option>
-            </select>
-          </label>
-          <label class="field">
-            <span>Raça</span>
-            <input type="text" placeholder="Ex.: SRD" />
-          </label>
-          <label class="field">
-            <span>Sexo</span>
-            <select>
-              <option>Fêmea</option><option>Macho</option>
-            </select>
-          </label>
-
-          <label class="field">
-            <span>Data de Nasc.</span>
-            <input type="date" />
-          </label>
-          <label class="field">
-            <span>Peso (kg)</span>
-            <input type="number" step="0.01" placeholder="0,00" />
-          </label>
-          <label class="field">
-            <span>Microchip</span>
-            <input type="text" />
-          </label>
-          <label class="check">
-            <input type="checkbox" />
-            <span>Vacinado</span>
-          </label>
-        </div>
-      </fieldset>
-
-      <!-- OBSERVAÇÕES -->
-      <fieldset class="card">
-        <legend>Observações</legend>
-        <label class="field">
-          <span>Observações gerais</span>
-          <textarea rows="4" placeholder="Alergias, restrições, preferência de contato..."></textarea>
-        </label>
-      </fieldset>
-
-      <!-- AÇÕES -->
-      <div class="form__actions">
-        <button type="reset" class="btn btn--ghost">Limpar</button>
-        <div class="spacer"></div>
-        <button type="button" class="btn btn--danger">Excluir</button>
-        <button type="button" class="btn btn--ghost">Inativar</button>
-        <button type="submit" class="btn btn--primary">Salvar Cadastro</button>
-      </div>
-    </form>
-    
-    <!-- LISTA DE PESSOAS CADASTRADAS -->
-    <section class="card" id="lista-cadastros">
-      <header class="list__header">
-        <h2 class="card__title">Pessoas Cadastradas</h2>
-        <div class="list__filters">
-          <label class="field">
-            <span>Tipo</span>
-            <select id="fTipo">
-              <option value="">Todos</option>
-              <option value="Física">Física</option>
-              <option value="Jurídica">Jurídica</option>
-            </select>
-          </label>
-          <label class="field">
-            <span>Situação</span>
-            <select id="fSituacao">
-              <option value="">Todas</option>
-              <option value="Ativo">Ativo</option>
-              <option value="Inativo">Inativo</option>
-            </select>
-          </label>
-          <label class="field field--search">
-            <span>Buscar</span>
-            <input id="fBusca" type="search" placeholder="Nome, CPF/CNPJ, e-mail, cidade..." />
-          </label>
+        <div class="actions">
+          <button class="btn btn-ghost">Procurar</button>
+          <button class="btn btn-ghost">Novo</button>
+          <button class="btn btn-primary">Salvar</button>
         </div>
       </header>
 
-      <div class="table-wrapper">
-        <table class="cadastro-table" aria-label="Lista de pessoas cadastradas">
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Nome</th>
-              <th>Tipo</th>
-              <th>CPF/CNPJ</th>
-              <th>Pet</th>
-              <th>Contato</th>
-              <th>E-mail</th>
-              <th>Cidade/UF</th>
-              <th>Situação</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody id="cadastrosBody">
-            <!-- EXEMPLOS -->
-            <tr>
-              <td>00136</td>
-              <td>João da Silva</td>
-              <td>Física</td>
-              <td>635.843.340-71</td>
-              <td>Luna (Canina)</td>
-              <td>(19) 1234-5678</td>
-              <td>joao@email.com</td>
-              <td>Mogi Mirim/SP</td>
-              <td><span class="badge badge--success">Ativo</span></td>
-              <td>
-                <a href="#" class="btn-small">Ver</a>
-                <a href="#" class="btn-small btn-small--ghost">Editar</a>
-              </td>
-            </tr>
-            <tr>
-              <td>00158</td>
-              <td>Clínica Amiga Ltda.</td>
-              <td>Jurídica</td>
-              <td>12.345.678/0001-90</td>
-              <td>—</td>
-              <td>(19) 3333-2222</td>
-              <td>contato@amiga.com.br</td>
-              <td>Campinas/SP</td>
-              <td><span class="badge badge--neutral">Inativo</span></td>
-              <td>
-                <a href="#" class="btn-small">Ver</a>
-                <a href="#" class="btn-small btn-small--ghost">Editar</a>
-              </td>
-            </tr>
-            <tr>
-              <td>00174</td>
-              <td>Mariana Souza</td>
-              <td>Física</td>
-              <td>401.235.654-00</td>
-              <td>Thor (Felina)</td>
-              <td>(19) 98888-7777</td>
-              <td>mariana@email.com</td>
-              <td>Jaguariúna/SP</td>
-              <td><span class="badge badge--success">Ativo</span></td>
-              <td>
-                <a href="#" class="btn-small">Ver</a>
-                <a href="#" class="btn-small btn-small--ghost">Editar</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <form class="form" autocomplete="on">
+        <!-- DADOS DO TUTOR -->
+        <fieldset class="card">
+          <legend>Dados do Tutor</legend>
+          <div class="grid g-3">
+            <label class="field">
+              <span>Código</span>
+              <input type="text" inputmode="numeric" placeholder="00000" />
+            </label>
 
-      <div class="list__foot">
-        <small class="muted">Use os filtros para localizar um cadastro rapidamente.</small>
-      </div>
-    </section>
+            <label class="field">
+              <span>Pessoa</span>
+              <select>
+                <option>Física</option>
+                <option>Jurídica</option>
+              </select>
+            </label>
 
+            <label class="field">
+              <span>Situação</span>
+              <select>
+                <option>Liberado</option>
+                <option>Inativo</option>
+                <option>Bloqueado</option>
+              </select>
+            </label>
 
-    <footer class="footer">
-      <small>© Clínica Vet — Cadastros</small>
-    </footer>
-  </main>
-</body>
+            <label class="field field-wide">
+              <span>Nome completo</span>
+              <input type="text" placeholder="Ex.: João da Silva" />
+            </label>
+
+            <label class="field">
+              <span>Sexo</span>
+              <select>
+                <option>F</option>
+                <option>M</option>
+                <option>Outro</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Data de nascimento</span>
+              <input type="date" />
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- DOCUMENTOS -->
+        <fieldset class="card">
+          <legend>Documentos</legend>
+          <div class="grid g-3">
+            <label class="field">
+              <span>CPF / CNPJ</span>
+              <input type="text" placeholder="000.000.000-00" />
+            </label>
+
+            <label class="field">
+              <span>RG / IE</span>
+              <input type="text" placeholder="Documento" />
+            </label>
+
+            <label class="field">
+              <span>UF do documento</span>
+              <select>
+                <option>SP</option>
+                <option>RJ</option>
+                <option>MG</option>
+                <option>PR</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Estado</span>
+              <input type="text" inputmode="numeric" placeholder="35" />
+            </label>
+
+            <label class="check">
+              <input type="checkbox" />
+              <span>Consulta CNPJ</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" />
+              <span>Inativo</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- ENDEREÇO -->
+        <fieldset class="card">
+          <legend>Endereço</legend>
+          <div class="grid g-4">
+            <label class="field field-3">
+              <span>Logradouro</span>
+              <input type="text" placeholder="Rua/Av." />
+            </label>
+            <label class="field">
+              <span>Nº</span>
+              <input type="text" inputmode="numeric" placeholder="123" />
+            </label>
+            <label class="field field-2">
+              <span>Compl.</span>
+              <input type="text" placeholder="Ap., Bloco, Casa..." />
+            </label>
+
+            <label class="field">
+              <span>Bairro</span>
+              <input type="text" />
+            </label>
+
+            <label class="field">
+              <span>CEP</span>
+              <input type="text" placeholder="00000-000" />
+            </label>
+
+            <label class="field">
+              <span>Cidade</span>
+              <input type="text" />
+            </label>
+
+            <label class="field">
+              <span>UF</span>
+              <select>
+                <option>SP</option>
+                <option>RJ</option>
+                <option>MG</option>
+                <option>ES</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>País</span>
+              <input type="text" value="Brasil" />
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- CONTATO -->
+        <fieldset class="card">
+          <legend>Contato</legend>
+          <div class="grid g-3">
+            <label class="field">
+              <span>Telefone</span>
+              <input type="tel" placeholder="(00) 0000-0000" />
+            </label>
+            <label class="field">
+              <span>Celular</span>
+              <input type="tel" placeholder="(00) 00000-0000" />
+            </label>
+            <label class="field field-wide">
+              <span>E-mail</span>
+              <input type="email" placeholder="email@exemplo.com" />
+            </label>
+            <label class="check">
+              <input type="checkbox" />
+              <span>Receber boleto por e-mail</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- DADOS DO PET -->
+        <fieldset class="card">
+          <legend>Dados do Pet</legend>
+          <div class="grid g-4">
+            <label class="field">
+              <span>Nome do Pet</span>
+              <input type="text" placeholder="Ex.: Luna" />
+            </label>
+            <label class="field">
+              <span>Espécie</span>
+              <select>
+                <option>Canina</option>
+                <option>Felina</option>
+                <option>Aves</option>
+                <option>Outros</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Raça</span>
+              <input type="text" placeholder="Ex.: SRD" />
+            </label>
+            <label class="field">
+              <span>Sexo</span>
+              <select>
+                <option>Fêmea</option>
+                <option>Macho</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Data de Nasc.</span>
+              <input type="date" />
+            </label>
+            <label class="field">
+              <span>Peso (kg)</span>
+              <input type="number" step="0.01" placeholder="0,00" />
+            </label>
+            <label class="field">
+              <span>Microchip</span>
+              <input type="text" />
+            </label>
+            <label class="check">
+              <input type="checkbox" />
+              <span>Vacinado</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- OBSERVAÇÕES -->
+        <fieldset class="card">
+          <legend>Observações</legend>
+          <label class="field">
+            <span>Observações gerais</span>
+            <textarea
+              rows="4"
+              placeholder="Alergias, restrições, preferência de contato..."
+            ></textarea>
+          </label>
+        </fieldset>
+
+        <!-- AÇÕES -->
+        <div class="form-actions">
+          <button type="reset" class="btn btn-ghost">Limpar</button>
+          <div class="spacer"></div>
+          <button type="button" class="btn btn-danger">Excluir</button>
+          <button type="button" class="btn btn-ghost">Inativar</button>
+          <button type="submit" class="btn btn-primary">
+            Salvar Cadastro
+          </button>
+        </div>
+      </form>
+
+      <!-- LISTA DE PESSOAS CADASTRADAS -->
+      <section class="card" id="lista-cadastros">
+        <header class="list-header">
+          <h2 class="card-title">Pessoas Cadastradas</h2>
+          <div class="list-filters">
+            <label class="field">
+              <span>Tipo</span>
+              <select id="fTipo">
+                <option value="">Todos</option>
+                <option value="Física">Física</option>
+                <option value="Jurídica">Jurídica</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Situação</span>
+              <select id="fSituacao">
+                <option value="">Todas</option>
+                <option value="Ativo">Ativo</option>
+                <option value="Inativo">Inativo</option>
+              </select>
+            </label>
+            <label class="field field-search">
+              <span>Buscar</span>
+              <input
+                id="fBusca"
+                type="search"
+                placeholder="Nome, CPF/CNPJ, e-mail, cidade..."
+              />
+            </label>
+          </div>
+        </header>
+
+        <div class="table-wrapper">
+          <table
+            class="cadastro-table"
+            aria-label="Lista de pessoas cadastradas"
+          >
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>CPF/CNPJ</th>
+                <th>Pet</th>
+                <th>Contato</th>
+                <th>E-mail</th>
+                <th>Cidade/UF</th>
+                <th>Situação</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody id="cadastrosBody">
+              <!-- EXEMPLOS -->
+              <tr>
+                <td>00136</td>
+                <td>João da Silva</td>
+                <td>Física</td>
+                <td>635.843.340-71</td>
+                <td>Luna (Canina)</td>
+                <td>(19) 1234-5678</td>
+                <td>joao@email.com</td>
+                <td>Mogi Mirim/SP</td>
+                <td><span class="badge badge-success">Ativo</span></td>
+                <td>
+                  <a href="#" class="btn-small">Ver</a>
+                  <a href="#" class="btn-small btn-small-ghost">Editar</a>
+                </td>
+              </tr>
+              <tr>
+                <td>00158</td>
+                <td>Clínica Amiga Ltda.</td>
+                <td>Jurídica</td>
+                <td>12.345.678/0001-90</td>
+                <td>—</td>
+                <td>(19) 3333-2222</td>
+                <td>contato@amiga.com.br</td>
+                <td>Campinas/SP</td>
+                <td><span class="badge badge-neutral">Inativo</span></td>
+                <td>
+                  <a href="#" class="btn-small">Ver</a>
+                  <a href="#" class="btn-small btn-small-ghost">Editar</a>
+                </td>
+              </tr>
+              <tr>
+                <td>00174</td>
+                <td>Mariana Souza</td>
+                <td>Física</td>
+                <td>401.235.654-00</td>
+                <td>Thor (Felina)</td>
+                <td>(19) 98888-7777</td>
+                <td>mariana@email.com</td>
+                <td>Jaguariúna/SP</td>
+                <td><span class="badge badge-success">Ativo</span></td>
+                <td>
+                  <a href="#" class="btn-small">Ver</a>
+                  <a href="#" class="btn-small btn-small-ghost">Editar</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="list-foot">
+          <small class="muted"
+            >Use os filtros para localizar um cadastro rapidamente.</small
+          >
+        </div>
+      </section>
+
+      <footer class="footer">
+        <small>© Clínica Vet — Cadastros</small>
+      </footer>
+    </main>
+  </body>
 </html>

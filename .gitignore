@@ -1,0 +1,8 @@
+# Dependências
+node_modules/
+
+# Sistema operacional
+.DS_Store
+
+# Ferramentas
+.stylelintrc.json

@@ -1,148 +1,222 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Clínica Vet — Prontuário</title>
-  <!-- base: seu CSS existente -->
-  <link rel="stylesheet" href="internacao.css" />
-  <!-- complemento desta página -->
-  <link rel="stylesheet" href="prontuario.css" />
-</head>
-<body>
-  <!-- Lateral -->
-  <aside class="sidenav">
-    <div class="brand">
-      <div class="brand__logo">🐾</div>
-      <div class="brand__name"><strong>CLÍNICA</strong><span>VET</span></div>
-    </div>
-    <nav class="sidenav__nav">
-      <a href="dashboard.html" class="nav-item" title="Início">
-        <span class="ico">🏠</span><span class="label">Início</span>
-      </a>
-      <a href="cadastro.html" class="nav-item" title="Cadastros">
-        <span class="ico">📝</span><span class="label">Cadastros</span>
-      </a>
-      <a href="agendamentos.html" class="nav-item" title="Agendamentos">
-        <span class="ico">🗓️</span><span class="label">Agendamentos</span>
-      </a>
-      <a href="atendimentos.html" class="nav-item" title="Atendimentos">
-        <span class="ico">💉</span><span class="label">Atendimentos</span>
-      </a>
-      <a href="internacao.html" class="nav-item" title="Internação">
-        <span class="ico">🏥</span><span class="label">Internação</span>
-      </a>
-      <!-- NOVA ABA -->
-      <a href="prontuario.html" class="nav-item active" title="Prontuários">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clínica Vet — Prontuário</title>
+    <!-- base: seu CSS existente -->
+    <link rel="stylesheet" href="internacao.css" />
+    <!-- complemento desta página -->
+    <link rel="stylesheet" href="prontuario.css" />
+  </head>
+  <body>
+    <!-- Lateral -->
+    <aside class="sidenav">
+      <div class="brand">
+        <div class="brand-logo">🐾</div>
+        <div class="brand-name"><strong>CLÍNICA</strong><span>VET</span></div>
+      </div>
+      <nav class="sidenav-nav">
+        <a href="dashboard.html" class="nav-item" title="Início">
+          <span class="ico">🏠</span><span class="label">Início</span>
+        </a>
+        <a href="cadastro.html" class="nav-item" title="Cadastros">
+          <span class="ico">📝</span><span class="label">Cadastros</span>
+        </a>
+        <a href="agendamentos.html" class="nav-item" title="Agendamentos">
+          <span class="ico">🗓️</span><span class="label">Agendamentos</span>
+        </a>
+        <a href="atendimentos.html" class="nav-item" title="Atendimentos">
+          <span class="ico">💉</span><span class="label">Atendimentos</span>
+        </a>
+        <a href="internacao.html" class="nav-item" title="Internação">
+          <span class="ico">🏥</span><span class="label">Internação</span>
+        </a>
+        <!-- Aba ativa na sidebar -->
+        <a href="prontuario.html" class="nav-item active" title="Prontuários">
           <span class="ico">📋</span><span class="label">Prontuários</span>
-      </a>
-    </nav>
-  </aside>
+        </a>
+      </nav>
+    </aside>
 
-  <!-- Página -->
-  <main class="page prontuario">
-    <header class="topbar prontuario-topbar">
-      <div class="patient-head">
-        <div class="avatar">🐶</div>
-        <div class="meta">
-          <h1>Luna — Prontuário</h1>
-          <p class="muted small">
-            ID: #C-2024-081 • Canina • SRD • Fêmea • 8,1 kg • 3 anos
-          </p>
+    <!-- Página -->
+    <main class="page prontuario">
+      <header class="topbar prontuario-topbar">
+        <div class="patient-head">
+          <div class="avatar">🐶</div>
+          <div class="meta">
+            <h1>Luna — Prontuário</h1>
+            <p class="muted small">
+              ID: #C-2024-081 • Canina • SRD • Fêmea • 8,1 kg • 3 anos
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="actions">
-        <button class="btn btn-primary">Editar</button>
-        <button class="btn">Imprimir</button>
-        <button class="btn btn-danger">Alta</button>
-      </div>
-    </header>
-
-    <!-- Linha 1: Resumo + Sinais vitais -->
-    <section class="grid grid-2">
-      <article class="card">
-        <h2 class="card-title">Resumo do Paciente</h2>
-        <div class="kv">
-          <div><span class="k">Tutor(a)</span><span class="v">Marina Costa</span></div>
-          <div><span class="k">Contato</span><span class="v">(11) 9 8888-7777</span></div>
-          <div><span class="k">Última atualização</span><span class="v">15/09/2025 10:42</span></div>
-          <div><span class="k">Status</span><span class="v badge badge-ok">Internada</span></div>
-          <div class="full"><span class="k">Queixa principal</span><span class="v">Vômitos intermitentes e hiporexia há 2 dias.</span></div>
-          <div class="full"><span class="k">Histórico</span><span class="v">Vacinada, vermifugada, sem comorbidades conhecidas. Dieta caseira.</span></div>
+        <div class="actions">
+          <button class="btn btn-primary">Editar</button>
+          <button class="btn">Imprimir</button>
+          <button class="btn btn-danger">Alta</button>
         </div>
-      </article>
+      </header>
 
-      <article class="card">
-        <h2 class="card-title">Sinais Vitais</h2>
-        <div class="vitals">
-          <div class="vital"><span class="lbl">Temperatura</span><span class="num">38,6<span class="unit">°C</span></span></div>
-          <div class="vital"><span class="lbl">Frequência Cardíaca</span><span class="num">96<span class="unit">bpm</span></span></div>
-          <div class="vital"><span class="lbl">Frequência Respiratória</span><span class="num">24<span class="unit">irpm</span></span></div>
-          <div class="vital"><span class="lbl">Pressão</span><span class="num">120/78<span class="unit">mmHg</span></span></div>
-          <div class="vital"><span class="lbl">Hidratação</span><span class="num">3/5</span></div>
-          <div class="vital"><span class="lbl">Dor</span><span class="num">2/10</span></div>
-        </div>
-      </article>
-    </section>
+      <!-- Linha 1: Resumo + Sinais vitais -->
+      <section class="grid grid-2">
+        <article class="card">
+          <h2 class="card-title">Resumo do Paciente</h2>
+          <div class="kv">
+            <div>
+              <span class="k">Tutor(a)</span><span class="v">Marina Costa</span>
+            </div>
+            <div>
+              <span class="k">Contato</span
+              ><span class="v">(11) 9 8888-7777</span>
+            </div>
+            <div>
+              <span class="k">Última atualização</span
+              ><span class="v">15/09/2025 10:42</span>
+            </div>
+            <div>
+              <span class="k">Status</span
+              ><span class="v badge badge-ok">Internada</span>
+            </div>
+            <div class="full">
+              <span class="k">Queixa principal</span
+              ><span class="v"
+                >Vômitos intermitentes e hiporexia há 2 dias.</span
+              >
+            </div>
+            <div class="full">
+              <span class="k">Histórico</span
+              ><span class="v"
+                >Vacinada, vermifugada, sem comorbidades conhecidas. Dieta
+                caseira.</span
+              >
+            </div>
+          </div>
+        </article>
 
-    <!-- Linha 2: Alergias + Medicações -->
-    <section class="grid grid-2">
-      <article class="card">
-        <h2 class="card-title">Alergias / Restrições</h2>
-        <ul class="chips">
-          <li class="chip chip-warn">⛔ Dipirona</li>
-          <li class="chip">🐔 Proteína de frango</li>
-          <li class="chip">🌾 Glúten</li>
-        </ul>
-        <p class="muted small">Revisar antes de prescrever novos fármacos.</p>
-      </article>
+        <article class="card">
+          <h2 class="card-title">Sinais Vitais</h2>
+          <div class="vitals">
+            <div class="vital">
+              <span class="lbl">Temperatura</span
+              ><span class="num">38,6<span class="unit">°C</span></span>
+            </div>
+            <div class="vital">
+              <span class="lbl">Frequência Cardíaca</span
+              ><span class="num">96<span class="unit">bpm</span></span>
+            </div>
+            <div class="vital">
+              <span class="lbl">Frequência Respiratória</span
+              ><span class="num">24<span class="unit">irpm</span></span>
+            </div>
+            <div class="vital">
+              <span class="lbl">Pressão</span
+              ><span class="num">120/78<span class="unit">mmHg</span></span>
+            </div>
+            <div class="vital">
+              <span class="lbl">Hidratação</span><span class="num">3/5</span>
+            </div>
+            <div class="vital">
+              <span class="lbl">Dor</span><span class="num">2/10</span>
+            </div>
+          </div>
+        </article>
+      </section>
 
-      <article class="card meds">
-        <h2 class="card-title">Medicações Ativas</h2>
-        <div class="table-wrapper">
-          <table class="table meds-table">
-            <thead>
-              <tr>
-                <th>Medicamento</th><th>Dose</th><th>Via</th><th>Frequência</th><th>Início</th><th>Observações</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Amoxicilina</td><td>12,5 mg/kg</td><td>VO</td><td>12/12h</td><td>14/09 20:00</td><td>Após alimentação</td></tr>
-              <tr><td>Soro</td><td>20 ml</td><td>IV</td><td>6/6h</td><td>14/09 22:00</td><td>Monitorar acesso</td></tr>
-              <tr><td>Antiemético</td><td>—</td><td>VO</td><td>8/8h</td><td>15/09 08:00</td><td>Se vômito</td></tr>
-            </tbody>
-          </table>
-        </div>
-        <p class="muted small">A tabela é rolável em telas pequenas.</p>
-      </article>
-    </section>
+      <!-- Linha 2: Alergias + Medicações -->
+      <section class="grid grid-2">
+        <article class="card">
+          <h2 class="card-title">Alergias / Restrições</h2>
+          <ul class="chips">
+            <li class="chip chip-warn">⛔ Dipirona</li>
+            <li class="chip">🐔 Proteína de frango</li>
+            <li class="chip">🌾 Glúten</li>
+          </ul>
+          <p class="muted small">Revisar antes de prescrever novos fármacos.</p>
+        </article>
 
-    <!-- Linha 3: Linha do tempo -->
-    <section class="card timeline">
-      <h2 class="card-title">Linha do Tempo</h2>
-      <ol class="timeline-list">
-        <li>
-          <div class="t-meta">15/09/2025 10:42</div>
-          <div class="t-body"><strong>Reavaliação:</strong> melhora do apetite; sem vômitos há 12h.</div>
-        </li>
-        <li>
-          <div class="t-meta">15/09/2025 08:00</div>
-          <div class="t-body"><strong>Medicação:</strong> antiemético VO.</div>
-        </li>
-        <li>
-          <div class="t-meta">14/09/2025 22:00</div>
-          <div class="t-body"><strong>Hidratação:</strong> soro 20 ml IV.</div>
-        </li>
-        <li>
-          <div class="t-meta">14/09/2025 20:10</div>
-          <div class="t-body"><strong>Admissão:</strong> sinais vitais estáveis; plano terapêutico iniciado.</div>
-        </li>
-      </ol>
-    </section>
+        <article class="card meds">
+          <h2 class="card-title">Medicações Ativas</h2>
+          <div class="table-wrapper">
+            <table class="table meds-table">
+              <thead>
+                <tr>
+                  <th>Medicamento</th>
+                  <th>Dose</th>
+                  <th>Via</th>
+                  <th>Frequência</th>
+                  <th>Início</th>
+                  <th>Observações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Amoxicilina</td>
+                  <td>12,5 mg/kg</td>
+                  <td>VO</td>
+                  <td>12/12h</td>
+                  <td>14/09 20:00</td>
+                  <td>Após alimentação</td>
+                </tr>
+                <tr>
+                  <td>Soro</td>
+                  <td>20 ml</td>
+                  <td>IV</td>
+                  <td>6/6h</td>
+                  <td>14/09 22:00</td>
+                  <td>Monitorar acesso</td>
+                </tr>
+                <tr>
+                  <td>Antiemético</td>
+                  <td>—</td>
+                  <td>VO</td>
+                  <td>8/8h</td>
+                  <td>15/09 08:00</td>
+                  <td>Se vômito</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="muted small">A tabela é rolável em telas pequenas.</p>
+        </article>
+      </section>
 
-    <footer class="footer">
-      <small>© Clínica Vet — Prontuário</small>
-    </footer>
-  </main>
-</body>
+      <!-- Linha 3: Linha do tempo -->
+      <section class="card timeline">
+        <h2 class="card-title">Linha do Tempo</h2>
+        <ol class="timeline-list">
+          <li>
+            <div class="t-meta">15/09/2025 10:42</div>
+            <div class="t-body">
+              <strong>Reavaliação:</strong> melhora do apetite; sem vômitos há
+              12h.
+            </div>
+          </li>
+          <li>
+            <div class="t-meta">15/09/2025 08:00</div>
+            <div class="t-body">
+              <strong>Medicação:</strong> antiemético VO.
+            </div>
+          </li>
+          <li>
+            <div class="t-meta">14/09/2025 22:00</div>
+            <div class="t-body">
+              <strong>Hidratação:</strong> soro 20 ml IV.
+            </div>
+          </li>
+          <li>
+            <div class="t-meta">14/09/2025 20:10</div>
+            <div class="t-body">
+              <strong>Admissão:</strong> sinais vitais estáveis; plano
+              terapêutico iniciado.
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <footer class="footer">
+        <small>© Clínica Vet — Prontuário</small>
+      </footer>
+    </main>
+  </body>
 </html>

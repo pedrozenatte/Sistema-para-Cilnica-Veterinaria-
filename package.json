@@ -1,0 +1,25 @@
+{
+  "name": "sistema-para-clinica-veterinaria",
+  "version": "1.0.0",
+  "description": "SCC0219 - Introdução ao Desenvolvimento Web Profa. Dra. Bruna Carolina Rodrigues da Cunha Primeira entrega: 15/09/2025",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pedrozenatte/Sistema-para-Clinica-Veterinaria.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pedrozenatte/Sistema-para-Clinica-Veterinaria/issues"
+  },
+  "homepage": "https://github.com/pedrozenatte/Sistema-para-Clinica-Veterinaria#readme",
+  "devDependencies": {
+    "stylelint": "^16.24.0",
+    "stylelint-config-standard": "^39.0.0"
+  }
+}
